@@ -57,10 +57,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/patrick/Documents/proyekalgo
+CMAKE_SOURCE_DIR = /Users/patrick/Documents/System-manageFood
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/patrick/Documents/proyekalgo/build
+CMAKE_BINARY_DIR = /Users/patrick/Documents/System-manageFood/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/patrick/Documents/proyekalgo/build/CMakeFiles /Users/patrick/Documents/proyekalgo/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/patrick/Documents/System-manageFood/build/CMakeFiles /Users/patrick/Documents/System-manageFood/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/patrick/Documents/proyekalgo/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/patrick/Documents/System-manageFood/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -130,6 +130,19 @@ InventarisMBG/fast:
 .PHONY : InventarisMBG/fast
 
 #=============================================================================
+# Target rules for targets named test_algo
+
+# Build rule for target.
+test_algo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_algo
+.PHONY : test_algo
+
+# fast build rule for target.
+test_algo/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_algo.dir/build.make CMakeFiles/test_algo.dir/build
+.PHONY : test_algo/fast
+
+#=============================================================================
 # Target rules for targets named InventarisMBG_autogen_timestamp_deps
 
 # Build rule for target.
@@ -154,6 +167,32 @@ InventarisMBG_autogen: cmake_check_build_system
 InventarisMBG_autogen/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/InventarisMBG_autogen.dir/build.make CMakeFiles/InventarisMBG_autogen.dir/build
 .PHONY : InventarisMBG_autogen/fast
+
+#=============================================================================
+# Target rules for targets named test_algo_autogen_timestamp_deps
+
+# Build rule for target.
+test_algo_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_algo_autogen_timestamp_deps
+.PHONY : test_algo_autogen_timestamp_deps
+
+# fast build rule for target.
+test_algo_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_algo_autogen_timestamp_deps.dir/build.make CMakeFiles/test_algo_autogen_timestamp_deps.dir/build
+.PHONY : test_algo_autogen_timestamp_deps/fast
+
+#=============================================================================
+# Target rules for targets named test_algo_autogen
+
+# Build rule for target.
+test_algo_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_algo_autogen
+.PHONY : test_algo_autogen
+
+# fast build rule for target.
+test_algo_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_algo_autogen.dir/build.make CMakeFiles/test_algo_autogen.dir/build
+.PHONY : test_algo_autogen/fast
 
 InventarisMBG_autogen/mocs_compilation.o: InventarisMBG_autogen/mocs_compilation.cpp.o
 .PHONY : InventarisMBG_autogen/mocs_compilation.o
@@ -185,6 +224,7 @@ src/core/Algorithms.o: src/core/Algorithms.cpp.o
 # target to build an object file
 src/core/Algorithms.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/InventarisMBG.dir/build.make CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_algo.dir/build.make CMakeFiles/test_algo.dir/src/core/Algorithms.cpp.o
 .PHONY : src/core/Algorithms.cpp.o
 
 src/core/Algorithms.i: src/core/Algorithms.cpp.i
@@ -193,6 +233,7 @@ src/core/Algorithms.i: src/core/Algorithms.cpp.i
 # target to preprocess a source file
 src/core/Algorithms.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/InventarisMBG.dir/build.make CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_algo.dir/build.make CMakeFiles/test_algo.dir/src/core/Algorithms.cpp.i
 .PHONY : src/core/Algorithms.cpp.i
 
 src/core/Algorithms.s: src/core/Algorithms.cpp.s
@@ -201,6 +242,7 @@ src/core/Algorithms.s: src/core/Algorithms.cpp.s
 # target to generate assembly for a file
 src/core/Algorithms.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/InventarisMBG.dir/build.make CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_algo.dir/build.make CMakeFiles/test_algo.dir/src/core/Algorithms.cpp.s
 .PHONY : src/core/Algorithms.cpp.s
 
 src/core/InventoryManager.o: src/core/InventoryManager.cpp.o
@@ -299,6 +341,54 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/InventarisMBG.dir/build.make CMakeFiles/InventarisMBG.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+test_algo_autogen/mocs_compilation.o: test_algo_autogen/mocs_compilation.cpp.o
+.PHONY : test_algo_autogen/mocs_compilation.o
+
+# target to build an object file
+test_algo_autogen/mocs_compilation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_algo.dir/build.make CMakeFiles/test_algo.dir/test_algo_autogen/mocs_compilation.cpp.o
+.PHONY : test_algo_autogen/mocs_compilation.cpp.o
+
+test_algo_autogen/mocs_compilation.i: test_algo_autogen/mocs_compilation.cpp.i
+.PHONY : test_algo_autogen/mocs_compilation.i
+
+# target to preprocess a source file
+test_algo_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_algo.dir/build.make CMakeFiles/test_algo.dir/test_algo_autogen/mocs_compilation.cpp.i
+.PHONY : test_algo_autogen/mocs_compilation.cpp.i
+
+test_algo_autogen/mocs_compilation.s: test_algo_autogen/mocs_compilation.cpp.s
+.PHONY : test_algo_autogen/mocs_compilation.s
+
+# target to generate assembly for a file
+test_algo_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_algo.dir/build.make CMakeFiles/test_algo.dir/test_algo_autogen/mocs_compilation.cpp.s
+.PHONY : test_algo_autogen/mocs_compilation.cpp.s
+
+tests/test_algorithms.o: tests/test_algorithms.cpp.o
+.PHONY : tests/test_algorithms.o
+
+# target to build an object file
+tests/test_algorithms.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_algo.dir/build.make CMakeFiles/test_algo.dir/tests/test_algorithms.cpp.o
+.PHONY : tests/test_algorithms.cpp.o
+
+tests/test_algorithms.i: tests/test_algorithms.cpp.i
+.PHONY : tests/test_algorithms.i
+
+# target to preprocess a source file
+tests/test_algorithms.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_algo.dir/build.make CMakeFiles/test_algo.dir/tests/test_algorithms.cpp.i
+.PHONY : tests/test_algorithms.cpp.i
+
+tests/test_algorithms.s: tests/test_algorithms.cpp.s
+.PHONY : tests/test_algorithms.s
+
+# target to generate assembly for a file
+tests/test_algorithms.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_algo.dir/build.make CMakeFiles/test_algo.dir/tests/test_algorithms.cpp.s
+.PHONY : tests/test_algorithms.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -309,7 +399,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... InventarisMBG_autogen"
 	@echo "... InventarisMBG_autogen_timestamp_deps"
+	@echo "... test_algo_autogen"
+	@echo "... test_algo_autogen_timestamp_deps"
 	@echo "... InventarisMBG"
+	@echo "... test_algo"
 	@echo "... InventarisMBG_autogen/mocs_compilation.o"
 	@echo "... InventarisMBG_autogen/mocs_compilation.i"
 	@echo "... InventarisMBG_autogen/mocs_compilation.s"
@@ -328,6 +421,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... test_algo_autogen/mocs_compilation.o"
+	@echo "... test_algo_autogen/mocs_compilation.i"
+	@echo "... test_algo_autogen/mocs_compilation.s"
+	@echo "... tests/test_algorithms.o"
+	@echo "... tests/test_algorithms.i"
+	@echo "... tests/test_algorithms.s"
 .PHONY : help
 
 

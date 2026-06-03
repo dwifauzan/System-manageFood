@@ -6,7 +6,7 @@ namespace algo {
 
 // --- Quick Sort Helpers ---
 int partition(std::vector<BahanMakanan>& items, int low, int high) {
-    std::string pivot = items[high].tanggalExpired;
+    const std::string& pivot = items[high].tanggalExpired;
     int i = (low - 1);
     for (int j = low; j <= high - 1; j++) {
         // Sort by expiry date (YYYY-MM-DD string comparison works fine)
@@ -28,31 +28,33 @@ void quickSortByExpiry(std::vector<BahanMakanan>& items, int low, int high) {
 }
 
 // --- Binary Search ---
-int binarySearchByName(const std::vector<BahanMakanan>& items, const std::string& targetName) {
+std::optional<size_t> binarySearchByName(const std::vector<BahanMakanan>& items, std::string_view targetName) {
+    if (items.empty()) return std::nullopt;
+    
     int low = 0;
-    int high = items.size() - 1;
+    int high = static_cast<int>(items.size()) - 1;
     
     while (low <= high) {
         int mid = low + (high - low) / 2;
         if (items[mid].namaBahan == targetName)
-            return mid;
+            return static_cast<size_t>(mid);
         if (items[mid].namaBahan < targetName)
             low = mid + 1;
         else
             high = mid - 1;
     }
-    return -1;
+    return std::nullopt;
 }
 
 // --- 0/1 Knapsack ---
-std::vector<int> solveKnapsack(const std::vector<BahanMakanan>& marketItems, int budget) {
-    int n = marketItems.size();
+std::vector<size_t> solveKnapsack(const std::vector<BahanMakanan>& marketItems, int budget) {
+    size_t n = marketItems.size();
     if (n == 0 || budget <= 0) return {};
 
     // dp[i][w] = max nutrition with i items and w budget
     std::vector<std::vector<int>> dp(n + 1, std::vector<int>(budget + 1, 0));
 
-    for (int i = 1; i <= n; i++) {
+    for (size_t i = 1; i <= n; i++) {
         for (int w = 1; w <= budget; w++) {
             if (marketItems[i - 1].hargaBahan <= w) {
                 dp[i][w] = std::max(marketItems[i - 1].kandunganNutrisi + dp[i - 1][w - marketItems[i - 1].hargaBahan],
@@ -64,10 +66,10 @@ std::vector<int> solveKnapsack(const std::vector<BahanMakanan>& marketItems, int
     }
 
     // Reconstruct the selection
-    std::vector<int> selectedIndices;
+    std::vector<size_t> selectedIndices;
     int res = dp[n][budget];
     int w = budget;
-    for (int i = n; i > 0 && res > 0; i--) {
+    for (size_t i = n; i > 0 && res > 0; i--) {
         if (res != dp[i - 1][w]) {
             selectedIndices.push_back(i - 1);
             res -= marketItems[i - 1].kandunganNutrisi;

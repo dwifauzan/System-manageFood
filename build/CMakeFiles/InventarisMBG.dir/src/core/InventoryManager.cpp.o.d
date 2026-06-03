@@ -1,7 +1,7 @@
 CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.o: \
-  /Users/patrick/Documents/proyekalgo/src/core/InventoryManager.cpp \
-  /Users/patrick/Documents/proyekalgo/include/core/InventoryManager.h \
-  /Users/patrick/Documents/proyekalgo/include/core/BahanMakanan.h \
+  /Users/patrick/Documents/System-manageFood/src/core/InventoryManager.cpp \
+  /Users/patrick/Documents/System-manageFood/include/core/InventoryManager.h \
+  /Users/patrick/Documents/System-manageFood/include/core/BahanMakanan.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/string \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/max.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/comp.h \
@@ -774,4 +774,4 @@ CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__locale_dir/wbuffer_convert.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__locale_dir/wstring_convert.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/cstdarg \
-  /Users/patrick/Documents/proyekalgo/include/core/Algorithms.h
+  /Users/patrick/Documents/System-manageFood/include/core/Algorithms.h

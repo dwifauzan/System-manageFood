@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <cassert>
+#include <algorithm>
 #include "core/Algorithms.h"
 #include "core/BahanMakanan.h"
 
@@ -11,7 +12,7 @@ void testQuickSort() {
         {"Beras", 50, 100, 15000, "2026-12-31"},
         {"Susu", 5, 60, 20000, "2026-06-05"}
     };
-    algo::quickSortByExpiry(items, 0, items.size() - 1);
+    algo::quickSortByExpiry(items, 0, static_cast<int>(items.size()) - 1);
     
     assert(items[0].namaBahan == "Susu");
     assert(items[1].namaBahan == "Ayam");
@@ -26,17 +27,15 @@ void testBinarySearch() {
         {"Beras", 50, 100, 15000, "2026-12-31"},
         {"Susu", 5, 60, 20000, "2026-06-05"}
     };
-    // Sort by name first for binary search
-    std::sort(items.begin(), items.end(), [](const BahanMakanan& a, const BahanMakanan& b) {
-        return a.namaBahan < b.namaBahan;
-    });
+    // Sort by name first for binary search (using the new operator<)
+    std::sort(items.begin(), items.end());
 
-    int index = algo::binarySearchByName(items, "Beras");
-    assert(index != -1);
-    assert(items[index].namaBahan == "Beras");
+    auto result = algo::binarySearchByName(items, "Beras");
+    assert(result.has_value());
+    assert(items[result.value()].namaBahan == "Beras");
 
-    int indexFail = algo::binarySearchByName(items, "Daging");
-    assert(indexFail == -1);
+    auto resultFail = algo::binarySearchByName(items, "Daging");
+    assert(!resultFail.has_value());
     std::cout << "Binary Search Passed!" << std::endl;
 }
 
@@ -50,19 +49,17 @@ void testKnapsack() {
     };
     int budget = 5000;
     
-    std::vector<int> selected = algo::solveKnapsack(market, budget);
+    std::vector<size_t> selected = algo::solveKnapsack(market, budget);
     
     int totalCost = 0;
     int totalNutri = 0;
-    for (int idx : selected) {
+    for (size_t idx : selected) {
         totalCost += market[idx].hargaBahan;
         totalNutri += market[idx].kandunganNutrisi;
     }
 
     assert(totalCost <= budget);
     // Best combo for 5000: Tempe (15) + Telur (10) = 25 nutri, cost 5000. 
-    // Wait, Sayur (5) + Tempe (15) = 20 nutri, cost 4000.
-    // Telur(10) + Tempe(15) = 25 nutri, cost 5000.
     assert(totalNutri == 25); 
     std::cout << "Knapsack Passed!" << std::endl;
 }

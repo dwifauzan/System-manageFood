@@ -10,10 +10,15 @@
  */
 struct BahanMakanan {
     std::string namaBahan;
-    int stokSekarang;
-    int kandunganNutrisi;  // 'Value' for Knapsack
-    int hargaBahan;        // 'Weight' for Knapsack
+    int stokSekarang = 0;
+    int kandunganNutrisi = 0;  // 'Value' for Knapsack
+    int hargaBahan = 0;        // 'Weight' for Knapsack
     std::string tanggalExpired; // Format: YYYY-MM-DD
+
+    // For Binary Search and sorting by name
+    bool operator<(const BahanMakanan& other) const {
+        return namaBahan < other.namaBahan;
+    }
 };
 
 #endif // BAHAN_MAKANAN_H

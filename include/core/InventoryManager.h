@@ -5,12 +5,15 @@
 #include <vector>
 #include <string>
 
+#include <optional>
+#include <string_view>
+
 class InventoryManager {
 public:
     void addItem(const BahanMakanan& item);
-    void removeItem(const std::string& name);
+    void removeItem(std::string_view name);
     std::vector<BahanMakanan> getSortedItemsByExpiry();
-    BahanMakanan* findItemByName(const std::string& name);
+    std::optional<BahanMakanan*> findItemByName(std::string_view name);
     
     const std::vector<BahanMakanan>& getInventory() const { return inventory; }
 

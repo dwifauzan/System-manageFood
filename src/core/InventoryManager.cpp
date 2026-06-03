@@ -6,35 +6,35 @@ void InventoryManager::addItem(const BahanMakanan& item) {
     inventory.push_back(item);
 }
 
-void InventoryManager::removeItem(const std::string& name) {
+void InventoryManager::removeItem(std::string_view name) {
     inventory.erase(std::remove_if(inventory.begin(), inventory.end(),
-        [&name](const BahanMakanan& item) { return item.namaBahan == name; }),
+        [name](const BahanMakanan& item) { return item.namaBahan == name; }),
         inventory.end());
 }
 
 std::vector<BahanMakanan> InventoryManager::getSortedItemsByExpiry() {
     std::vector<BahanMakanan> sorted = inventory;
     if (!sorted.empty()) {
-        algo::quickSortByExpiry(sorted, 0, sorted.size() - 1);
+        algo::quickSortByExpiry(sorted, 0, static_cast<int>(sorted.size()) - 1);
     }
     return sorted;
 }
 
-BahanMakanan* InventoryManager::findItemByName(const std::string& name) {
-    // Sort for binary search
-    std::vector<BahanMakanan> temp = inventory;
-    std::sort(temp.begin(), temp.end(), [](const BahanMakanan& a, const BahanMakanan& b) {
-        return a.namaBahan < b.namaBahan;
-    });
+std::optional<BahanMakanan*> InventoryManager::findItemByName(std::string_view name) {
+    if (inventory.empty()) return std::nullopt;
 
-    int index = algo::binarySearchByName(temp, name);
-    if (index != -1) {
-        // Find original pointer (this is a bit inefficient, but keeps the demo simple)
+    // Sort for binary search (using the new operator<)
+    std::vector<BahanMakanan> temp = inventory;
+    std::sort(temp.begin(), temp.end());
+
+    auto indexOpt = algo::binarySearchByName(temp, name);
+    if (indexOpt.has_value()) {
+        // Find original pointer
         for (auto& item : inventory) {
             if (item.namaBahan == name) return &item;
         }
     }
-    return nullptr;
+    return std::nullopt;
 }
 
 void InventoryManager::loadFromDummy() {

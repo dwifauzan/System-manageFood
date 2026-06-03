@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/patrick/Documents/proyekalgo
+CMAKE_SOURCE_DIR = /Users/patrick/Documents/System-manageFood
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/patrick/Documents/proyekalgo/build
+CMAKE_BINARY_DIR = /Users/patrick/Documents/System-manageFood/build
 
 # Utility rule file for InventarisMBG_autogen.
 
@@ -71,9 +71,9 @@ CMakeFiles/InventarisMBG_autogen: InventarisMBG_autogen/timestamp
 InventarisMBG_autogen/timestamp: /opt/homebrew/share/qt/libexec/moc
 InventarisMBG_autogen/timestamp: /opt/homebrew/share/qt/libexec/uic
 InventarisMBG_autogen/timestamp: CMakeFiles/InventarisMBG_autogen.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/patrick/Documents/proyekalgo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target InventarisMBG"
-	/opt/homebrew/bin/cmake -E cmake_autogen /Users/patrick/Documents/proyekalgo/build/CMakeFiles/InventarisMBG_autogen.dir/AutogenInfo.json ""
-	/opt/homebrew/bin/cmake -E touch /Users/patrick/Documents/proyekalgo/build/InventarisMBG_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/patrick/Documents/System-manageFood/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target InventarisMBG"
+	/opt/homebrew/bin/cmake -E cmake_autogen /Users/patrick/Documents/System-manageFood/build/CMakeFiles/InventarisMBG_autogen.dir/AutogenInfo.json ""
+	/opt/homebrew/bin/cmake -E touch /Users/patrick/Documents/System-manageFood/build/InventarisMBG_autogen/timestamp
 
 CMakeFiles/InventarisMBG_autogen.dir/codegen:
 .PHONY : CMakeFiles/InventarisMBG_autogen.dir/codegen
@@ -92,6 +92,6 @@ CMakeFiles/InventarisMBG_autogen.dir/clean:
 .PHONY : CMakeFiles/InventarisMBG_autogen.dir/clean
 
 CMakeFiles/InventarisMBG_autogen.dir/depend:
-	cd /Users/patrick/Documents/proyekalgo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/patrick/Documents/proyekalgo /Users/patrick/Documents/proyekalgo /Users/patrick/Documents/proyekalgo/build /Users/patrick/Documents/proyekalgo/build /Users/patrick/Documents/proyekalgo/build/CMakeFiles/InventarisMBG_autogen.dir/DependInfo.cmake "--color=$(COLOR)" InventarisMBG_autogen
+	cd /Users/patrick/Documents/System-manageFood/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/patrick/Documents/System-manageFood /Users/patrick/Documents/System-manageFood /Users/patrick/Documents/System-manageFood/build /Users/patrick/Documents/System-manageFood/build /Users/patrick/Documents/System-manageFood/build/CMakeFiles/InventarisMBG_autogen.dir/DependInfo.cmake "--color=$(COLOR)" InventarisMBG_autogen
 .PHONY : CMakeFiles/InventarisMBG_autogen.dir/depend
 

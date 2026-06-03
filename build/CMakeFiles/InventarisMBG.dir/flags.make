@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
 
-CXX_INCLUDES = -I/Users/patrick/Documents/proyekalgo/build/InventarisMBG_autogen/include -I/Users/patrick/Documents/proyekalgo/include -isystem /opt/homebrew/opt/qt/lib/QtWidgets.framework/Headers -iframework /opt/homebrew/opt/qt/lib -isystem /opt/homebrew/opt/qt/lib/QtCore.framework/Headers -isystem /opt/homebrew/opt/qt/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/opt/qt/include -isystem /opt/homebrew/opt/qt/lib/QtGui.framework/Headers
+CXX_INCLUDES = -I/Users/patrick/Documents/System-manageFood/build/InventarisMBG_autogen/include -I/Users/patrick/Documents/System-manageFood/include -isystem /opt/homebrew/lib/QtWidgets.framework/Headers -iframework /opt/homebrew/lib -isystem /opt/homebrew/lib/QtCore.framework/Headers -isystem /opt/homebrew/share/qt/mkspecs/macx-clang -isystem /opt/homebrew/include -isystem /opt/homebrew/lib/QtGui.framework/Headers
 
 CXX_FLAGSarm64 = -std=gnu++17 -arch arm64
 

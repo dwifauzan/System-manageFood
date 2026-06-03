@@ -1,7 +1,7 @@
 CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.o: \
-  /Users/patrick/Documents/proyekalgo/src/core/Algorithms.cpp \
-  /Users/patrick/Documents/proyekalgo/include/core/Algorithms.h \
-  /Users/patrick/Documents/proyekalgo/include/core/BahanMakanan.h \
+  /Users/patrick/Documents/System-manageFood/src/core/Algorithms.cpp \
+  /Users/patrick/Documents/System-manageFood/include/core/Algorithms.h \
+  /Users/patrick/Documents/System-manageFood/include/core/BahanMakanan.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/string \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/max.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__algorithm/comp.h \

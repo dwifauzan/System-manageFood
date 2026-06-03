@@ -1,5 +1,5 @@
-/Users/patrick/Documents/proyekalgo/build/InventarisMBG_autogen/BMPI5EA7AM/moc_LoginDialog.cpp: /Users/patrick/Documents/proyekalgo/include/gui/LoginDialog.h \
-  /Users/patrick/Documents/proyekalgo/build/InventarisMBG_autogen/moc_predefs.h \
+/Users/patrick/Documents/System-manageFood/build/InventarisMBG_autogen/BMPI5EA7AM/moc_LoginDialog.cpp: /Users/patrick/Documents/System-manageFood/include/gui/LoginDialog.h \
+  /Users/patrick/Documents/System-manageFood/build/InventarisMBG_autogen/moc_predefs.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk/usr/include/Availability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk/usr/include/AvailabilityInternal.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk/usr/include/AvailabilityInternalLegacy.h \

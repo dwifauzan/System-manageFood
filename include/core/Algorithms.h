@@ -4,6 +4,8 @@
 #include "BahanMakanan.h"
 #include <vector>
 #include <string>
+#include <optional>
+#include <string_view>
 
 namespace algo {
 
@@ -12,13 +14,13 @@ namespace algo {
 void quickSortByExpiry(std::vector<BahanMakanan>& items, int low, int high);
 
 // 2. Binary Search
-// Search by name (case-insensitive recommended). Returns index or -1.
+// Search by name. Returns index or std::nullopt.
 // Prerequisite: vector must be sorted by name.
-int binarySearchByName(const std::vector<BahanMakanan>& items, const std::string& targetName);
+std::optional<size_t> binarySearchByName(const std::vector<BahanMakanan>& items, std::string_view targetName);
 
 // 3. 0/1 Knapsack (Dynamic Programming)
 // Returns the indices of items that maximize nutrition within the budget.
-std::vector<int> solveKnapsack(const std::vector<BahanMakanan>& marketItems, int budget);
+std::vector<size_t> solveKnapsack(const std::vector<BahanMakanan>& marketItems, int budget);
 
 } // namespace algo
 

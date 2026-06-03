@@ -69,10 +69,12 @@ void MainWindow::setupInventoryTab() {
         refreshTable(invManager.getSortedItemsByExpiry());
     });
 
-    connect(searchBtn, &QPushButton::clicked, [this, searchEdit, table]() {
+    connect(searchBtn, &QPushButton::clicked, [this, searchEdit]() {
         std::string target = searchEdit->text().toStdString();
-        BahanMakanan* item = invManager.findItemByName(target);
-        if (item) {
+        auto result = invManager.findItemByName(target);
+        
+        if (result.has_value()) {
+            BahanMakanan* item = result.value();
             QMessageBox::information(this, "Search Result", 
                 QString("Found: %1\nStok: %2\nExpired: %3")
                 .arg(QString::fromStdString(item->namaBahan))
@@ -132,12 +134,12 @@ void MainWindow::setupMarketTab() {
             return;
         }
 
-        std::vector<int> selected = algo::solveKnapsack(marketItems, budget);
+        std::vector<size_t> selected = algo::solveKnapsack(marketItems, budget);
         
         QString result = "Rekomendasi Belanja (Nutrisi Maksimal):\n\n";
         int totalNutri = 0;
         int totalCost = 0;
-        for (int idx : selected) {
+        for (size_t idx : selected) {
             result += QString("- %1 (Nutrisi: %2, Harga: %3)\n")
                 .arg(QString::fromStdString(marketItems[idx].namaBahan))
                 .arg(marketItems[idx].kandunganNutrisi)

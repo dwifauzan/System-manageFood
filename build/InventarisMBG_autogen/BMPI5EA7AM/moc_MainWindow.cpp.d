@@ -1,5 +1,5 @@
-/Users/patrick/Documents/proyekalgo/build/InventarisMBG_autogen/BMPI5EA7AM/moc_MainWindow.cpp: /Users/patrick/Documents/proyekalgo/include/gui/MainWindow.h \
-  /Users/patrick/Documents/proyekalgo/build/InventarisMBG_autogen/moc_predefs.h \
+/Users/patrick/Documents/System-manageFood/build/InventarisMBG_autogen/BMPI5EA7AM/moc_MainWindow.cpp: /Users/patrick/Documents/System-manageFood/include/gui/MainWindow.h \
+  /Users/patrick/Documents/System-manageFood/build/InventarisMBG_autogen/moc_predefs.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk/usr/include/Availability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk/usr/include/AvailabilityInternal.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX26.5.sdk/usr/include/AvailabilityInternalLegacy.h \
@@ -750,8 +750,8 @@
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/limits.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/ptrcheck.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/21/include/stdarg.h \
-  /Users/patrick/Documents/proyekalgo/include/core/BahanMakanan.h \
-  /Users/patrick/Documents/proyekalgo/include/core/InventoryManager.h \
+  /Users/patrick/Documents/System-manageFood/include/core/BahanMakanan.h \
+  /Users/patrick/Documents/System-manageFood/include/core/InventoryManager.h \
   /opt/homebrew/Cellar/qtbase/6.11.1/lib/QtCore.framework/Versions/A/Headers/QString \
   /opt/homebrew/Cellar/qtbase/6.11.1/lib/QtCore.framework/Versions/A/Headers/q17memory.h \
   /opt/homebrew/Cellar/qtbase/6.11.1/lib/QtCore.framework/Versions/A/Headers/q20bit.h \

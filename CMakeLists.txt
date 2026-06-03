@@ -32,5 +32,8 @@ set(HEADERS
 )
 
 add_executable(InventarisMBG ${SOURCES} ${HEADERS})
-
 target_link_libraries(InventarisMBG PRIVATE Qt6::Widgets)
+
+# Unit Test Executable
+add_executable(test_algo tests/test_algorithms.cpp src/core/Algorithms.cpp)
+target_include_directories(test_algo PRIVATE include)

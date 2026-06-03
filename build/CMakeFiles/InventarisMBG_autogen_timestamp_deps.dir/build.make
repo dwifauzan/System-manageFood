@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/patrick/Documents/proyekalgo
+CMAKE_SOURCE_DIR = /Users/patrick/Documents/System-manageFood
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/patrick/Documents/proyekalgo/build
+CMAKE_BINARY_DIR = /Users/patrick/Documents/System-manageFood/build
 
 # Utility rule file for InventarisMBG_autogen_timestamp_deps.
 
@@ -81,6 +81,6 @@ CMakeFiles/InventarisMBG_autogen_timestamp_deps.dir/clean:
 .PHONY : CMakeFiles/InventarisMBG_autogen_timestamp_deps.dir/clean
 
 CMakeFiles/InventarisMBG_autogen_timestamp_deps.dir/depend:
-	cd /Users/patrick/Documents/proyekalgo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/patrick/Documents/proyekalgo /Users/patrick/Documents/proyekalgo /Users/patrick/Documents/proyekalgo/build /Users/patrick/Documents/proyekalgo/build /Users/patrick/Documents/proyekalgo/build/CMakeFiles/InventarisMBG_autogen_timestamp_deps.dir/DependInfo.cmake "--color=$(COLOR)" InventarisMBG_autogen_timestamp_deps
+	cd /Users/patrick/Documents/System-manageFood/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/patrick/Documents/System-manageFood /Users/patrick/Documents/System-manageFood /Users/patrick/Documents/System-manageFood/build /Users/patrick/Documents/System-manageFood/build /Users/patrick/Documents/System-manageFood/build/CMakeFiles/InventarisMBG_autogen_timestamp_deps.dir/DependInfo.cmake "--color=$(COLOR)" InventarisMBG_autogen_timestamp_deps
 .PHONY : CMakeFiles/InventarisMBG_autogen_timestamp_deps.dir/depend
 

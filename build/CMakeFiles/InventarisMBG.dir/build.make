@@ -53,10 +53,10 @@ RM = /opt/homebrew/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/patrick/Documents/proyekalgo
+CMAKE_SOURCE_DIR = /Users/patrick/Documents/System-manageFood
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/patrick/Documents/proyekalgo/build
+CMAKE_BINARY_DIR = /Users/patrick/Documents/System-manageFood/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/InventarisMBG.dir/depend.make
@@ -72,9 +72,9 @@ include CMakeFiles/InventarisMBG.dir/flags.make
 InventarisMBG_autogen/timestamp: /opt/homebrew/share/qt/libexec/moc
 InventarisMBG_autogen/timestamp: /opt/homebrew/share/qt/libexec/uic
 InventarisMBG_autogen/timestamp: CMakeFiles/InventarisMBG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/patrick/Documents/proyekalgo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target InventarisMBG"
-	/opt/homebrew/bin/cmake -E cmake_autogen /Users/patrick/Documents/proyekalgo/build/CMakeFiles/InventarisMBG_autogen.dir/AutogenInfo.json ""
-	/opt/homebrew/bin/cmake -E touch /Users/patrick/Documents/proyekalgo/build/InventarisMBG_autogen/timestamp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/Users/patrick/Documents/System-manageFood/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target InventarisMBG"
+	/opt/homebrew/bin/cmake -E cmake_autogen /Users/patrick/Documents/System-manageFood/build/CMakeFiles/InventarisMBG_autogen.dir/AutogenInfo.json ""
+	/opt/homebrew/bin/cmake -E touch /Users/patrick/Documents/System-manageFood/build/InventarisMBG_autogen/timestamp
 
 CMakeFiles/InventarisMBG.dir/codegen:
 .PHONY : CMakeFiles/InventarisMBG.dir/codegen
@@ -82,86 +82,86 @@ CMakeFiles/InventarisMBG.dir/codegen:
 CMakeFiles/InventarisMBG.dir/InventarisMBG_autogen/mocs_compilation.cpp.o: CMakeFiles/InventarisMBG.dir/flags.make
 CMakeFiles/InventarisMBG.dir/InventarisMBG_autogen/mocs_compilation.cpp.o: InventarisMBG_autogen/mocs_compilation.cpp
 CMakeFiles/InventarisMBG.dir/InventarisMBG_autogen/mocs_compilation.cpp.o: CMakeFiles/InventarisMBG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/patrick/Documents/proyekalgo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/InventarisMBG.dir/InventarisMBG_autogen/mocs_compilation.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/InventarisMBG.dir/InventarisMBG_autogen/mocs_compilation.cpp.o -MF CMakeFiles/InventarisMBG.dir/InventarisMBG_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/InventarisMBG.dir/InventarisMBG_autogen/mocs_compilation.cpp.o -c /Users/patrick/Documents/proyekalgo/build/InventarisMBG_autogen/mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/patrick/Documents/System-manageFood/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/InventarisMBG.dir/InventarisMBG_autogen/mocs_compilation.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/InventarisMBG.dir/InventarisMBG_autogen/mocs_compilation.cpp.o -MF CMakeFiles/InventarisMBG.dir/InventarisMBG_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/InventarisMBG.dir/InventarisMBG_autogen/mocs_compilation.cpp.o -c /Users/patrick/Documents/System-manageFood/build/InventarisMBG_autogen/mocs_compilation.cpp
 
 CMakeFiles/InventarisMBG.dir/InventarisMBG_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/InventarisMBG.dir/InventarisMBG_autogen/mocs_compilation.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/patrick/Documents/proyekalgo/build/InventarisMBG_autogen/mocs_compilation.cpp > CMakeFiles/InventarisMBG.dir/InventarisMBG_autogen/mocs_compilation.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/patrick/Documents/System-manageFood/build/InventarisMBG_autogen/mocs_compilation.cpp > CMakeFiles/InventarisMBG.dir/InventarisMBG_autogen/mocs_compilation.cpp.i
 
 CMakeFiles/InventarisMBG.dir/InventarisMBG_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/InventarisMBG.dir/InventarisMBG_autogen/mocs_compilation.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/patrick/Documents/proyekalgo/build/InventarisMBG_autogen/mocs_compilation.cpp -o CMakeFiles/InventarisMBG.dir/InventarisMBG_autogen/mocs_compilation.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/patrick/Documents/System-manageFood/build/InventarisMBG_autogen/mocs_compilation.cpp -o CMakeFiles/InventarisMBG.dir/InventarisMBG_autogen/mocs_compilation.cpp.s
 
 CMakeFiles/InventarisMBG.dir/src/main.cpp.o: CMakeFiles/InventarisMBG.dir/flags.make
-CMakeFiles/InventarisMBG.dir/src/main.cpp.o: /Users/patrick/Documents/proyekalgo/src/main.cpp
+CMakeFiles/InventarisMBG.dir/src/main.cpp.o: /Users/patrick/Documents/System-manageFood/src/main.cpp
 CMakeFiles/InventarisMBG.dir/src/main.cpp.o: CMakeFiles/InventarisMBG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/patrick/Documents/proyekalgo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/InventarisMBG.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/InventarisMBG.dir/src/main.cpp.o -MF CMakeFiles/InventarisMBG.dir/src/main.cpp.o.d -o CMakeFiles/InventarisMBG.dir/src/main.cpp.o -c /Users/patrick/Documents/proyekalgo/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/patrick/Documents/System-manageFood/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/InventarisMBG.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/InventarisMBG.dir/src/main.cpp.o -MF CMakeFiles/InventarisMBG.dir/src/main.cpp.o.d -o CMakeFiles/InventarisMBG.dir/src/main.cpp.o -c /Users/patrick/Documents/System-manageFood/src/main.cpp
 
 CMakeFiles/InventarisMBG.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/InventarisMBG.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/patrick/Documents/proyekalgo/src/main.cpp > CMakeFiles/InventarisMBG.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/patrick/Documents/System-manageFood/src/main.cpp > CMakeFiles/InventarisMBG.dir/src/main.cpp.i
 
 CMakeFiles/InventarisMBG.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/InventarisMBG.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/patrick/Documents/proyekalgo/src/main.cpp -o CMakeFiles/InventarisMBG.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/patrick/Documents/System-manageFood/src/main.cpp -o CMakeFiles/InventarisMBG.dir/src/main.cpp.s
 
 CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.o: CMakeFiles/InventarisMBG.dir/flags.make
-CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.o: /Users/patrick/Documents/proyekalgo/src/core/Algorithms.cpp
+CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.o: /Users/patrick/Documents/System-manageFood/src/core/Algorithms.cpp
 CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.o: CMakeFiles/InventarisMBG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/patrick/Documents/proyekalgo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.o -MF CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.o.d -o CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.o -c /Users/patrick/Documents/proyekalgo/src/core/Algorithms.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/patrick/Documents/System-manageFood/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.o -MF CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.o.d -o CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.o -c /Users/patrick/Documents/System-manageFood/src/core/Algorithms.cpp
 
 CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/patrick/Documents/proyekalgo/src/core/Algorithms.cpp > CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/patrick/Documents/System-manageFood/src/core/Algorithms.cpp > CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.i
 
 CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/patrick/Documents/proyekalgo/src/core/Algorithms.cpp -o CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/patrick/Documents/System-manageFood/src/core/Algorithms.cpp -o CMakeFiles/InventarisMBG.dir/src/core/Algorithms.cpp.s
 
 CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.o: CMakeFiles/InventarisMBG.dir/flags.make
-CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.o: /Users/patrick/Documents/proyekalgo/src/core/InventoryManager.cpp
+CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.o: /Users/patrick/Documents/System-manageFood/src/core/InventoryManager.cpp
 CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.o: CMakeFiles/InventarisMBG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/patrick/Documents/proyekalgo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.o -MF CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.o.d -o CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.o -c /Users/patrick/Documents/proyekalgo/src/core/InventoryManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/patrick/Documents/System-manageFood/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.o -MF CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.o.d -o CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.o -c /Users/patrick/Documents/System-manageFood/src/core/InventoryManager.cpp
 
 CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/patrick/Documents/proyekalgo/src/core/InventoryManager.cpp > CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/patrick/Documents/System-manageFood/src/core/InventoryManager.cpp > CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.i
 
 CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/patrick/Documents/proyekalgo/src/core/InventoryManager.cpp -o CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/patrick/Documents/System-manageFood/src/core/InventoryManager.cpp -o CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.s
 
 CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.o: CMakeFiles/InventarisMBG.dir/flags.make
-CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.o: /Users/patrick/Documents/proyekalgo/src/gui/LoginDialog.cpp
+CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.o: /Users/patrick/Documents/System-manageFood/src/gui/LoginDialog.cpp
 CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.o: CMakeFiles/InventarisMBG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/patrick/Documents/proyekalgo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.o -MF CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.o.d -o CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.o -c /Users/patrick/Documents/proyekalgo/src/gui/LoginDialog.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/patrick/Documents/System-manageFood/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.o -MF CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.o.d -o CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.o -c /Users/patrick/Documents/System-manageFood/src/gui/LoginDialog.cpp
 
 CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/patrick/Documents/proyekalgo/src/gui/LoginDialog.cpp > CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/patrick/Documents/System-manageFood/src/gui/LoginDialog.cpp > CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.i
 
 CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/patrick/Documents/proyekalgo/src/gui/LoginDialog.cpp -o CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/patrick/Documents/System-manageFood/src/gui/LoginDialog.cpp -o CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.s
 
 CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.o: CMakeFiles/InventarisMBG.dir/flags.make
-CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.o: /Users/patrick/Documents/proyekalgo/src/gui/MainWindow.cpp
+CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.o: /Users/patrick/Documents/System-manageFood/src/gui/MainWindow.cpp
 CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.o: CMakeFiles/InventarisMBG.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/patrick/Documents/proyekalgo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.o -MF CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.o.d -o CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.o -c /Users/patrick/Documents/proyekalgo/src/gui/MainWindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/patrick/Documents/System-manageFood/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.o -MF CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.o.d -o CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.o -c /Users/patrick/Documents/System-manageFood/src/gui/MainWindow.cpp
 
 CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/patrick/Documents/proyekalgo/src/gui/MainWindow.cpp > CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/patrick/Documents/System-manageFood/src/gui/MainWindow.cpp > CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.i
 
 CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/patrick/Documents/proyekalgo/src/gui/MainWindow.cpp -o CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/patrick/Documents/System-manageFood/src/gui/MainWindow.cpp -o CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.s
 
 # Object files for target InventarisMBG
 InventarisMBG_OBJECTS = \
@@ -182,11 +182,11 @@ InventarisMBG: CMakeFiles/InventarisMBG.dir/src/core/InventoryManager.cpp.o
 InventarisMBG: CMakeFiles/InventarisMBG.dir/src/gui/LoginDialog.cpp.o
 InventarisMBG: CMakeFiles/InventarisMBG.dir/src/gui/MainWindow.cpp.o
 InventarisMBG: CMakeFiles/InventarisMBG.dir/build.make
-InventarisMBG: /opt/homebrew/opt/qt/lib/QtWidgets.framework/Versions/A/QtWidgets
-InventarisMBG: /opt/homebrew/opt/qt/lib/QtGui.framework/Versions/A/QtGui
-InventarisMBG: /opt/homebrew/opt/qt/lib/QtCore.framework/Versions/A/QtCore
+InventarisMBG: /opt/homebrew/lib/QtWidgets.framework/Versions/A/QtWidgets
+InventarisMBG: /opt/homebrew/lib/QtGui.framework/Versions/A/QtGui
+InventarisMBG: /opt/homebrew/lib/QtCore.framework/Versions/A/QtCore
 InventarisMBG: CMakeFiles/InventarisMBG.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/patrick/Documents/proyekalgo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable InventarisMBG"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/patrick/Documents/System-manageFood/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable InventarisMBG"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/InventarisMBG.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -198,6 +198,6 @@ CMakeFiles/InventarisMBG.dir/clean:
 .PHONY : CMakeFiles/InventarisMBG.dir/clean
 
 CMakeFiles/InventarisMBG.dir/depend: InventarisMBG_autogen/timestamp
-	cd /Users/patrick/Documents/proyekalgo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/patrick/Documents/proyekalgo /Users/patrick/Documents/proyekalgo /Users/patrick/Documents/proyekalgo/build /Users/patrick/Documents/proyekalgo/build /Users/patrick/Documents/proyekalgo/build/CMakeFiles/InventarisMBG.dir/DependInfo.cmake "--color=$(COLOR)" InventarisMBG
+	cd /Users/patrick/Documents/System-manageFood/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/patrick/Documents/System-manageFood /Users/patrick/Documents/System-manageFood /Users/patrick/Documents/System-manageFood/build /Users/patrick/Documents/System-manageFood/build /Users/patrick/Documents/System-manageFood/build/CMakeFiles/InventarisMBG.dir/DependInfo.cmake "--color=$(COLOR)" InventarisMBG
 .PHONY : CMakeFiles/InventarisMBG.dir/depend
 

@@ -1,2 +1,4 @@
-set(__QT_DEPLOY_TARGET_InventarisMBG_FILE /Users/patrick/Documents/proyekalgo/build/InventarisMBG)
+set(__QT_DEPLOY_TARGET_InventarisMBG_FILE /Users/patrick/Documents/System-manageFood/build/InventarisMBG)
 set(__QT_DEPLOY_TARGET_InventarisMBG_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_test_algo_FILE /Users/patrick/Documents/System-manageFood/build/test_algo)
+set(__QT_DEPLOY_TARGET_test_algo_TYPE EXECUTABLE)
