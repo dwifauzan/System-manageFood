@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_InventarisMBG_FILE /Users/patrick/Documents/proyekalgo/build/InventarisMBG)
+set(__QT_DEPLOY_TARGET_InventarisMBG_TYPE EXECUTABLE)

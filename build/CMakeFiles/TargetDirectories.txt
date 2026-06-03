@@ -1,0 +1,5 @@
+/Users/patrick/Documents/proyekalgo/build/CMakeFiles/InventarisMBG.dir
+/Users/patrick/Documents/proyekalgo/build/CMakeFiles/edit_cache.dir
+/Users/patrick/Documents/proyekalgo/build/CMakeFiles/rebuild_cache.dir
+/Users/patrick/Documents/proyekalgo/build/CMakeFiles/InventarisMBG_autogen_timestamp_deps.dir
+/Users/patrick/Documents/proyekalgo/build/CMakeFiles/InventarisMBG_autogen.dir
