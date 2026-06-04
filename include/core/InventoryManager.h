@@ -17,6 +17,10 @@ public:
     
     const std::vector<BahanMakanan>& getInventory() const { return inventory; }
 
+    // CSV Persistence
+    void saveToCSV(const std::string& filename);
+    void loadFromCSV(const std::string& filename);
+
     // Dummy persistence (could be file-based)
     void loadFromDummy();
 

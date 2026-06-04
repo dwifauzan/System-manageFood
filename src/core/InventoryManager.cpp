@@ -1,6 +1,13 @@
 #include "core/InventoryManager.h"
 #include "core/Algorithms.h"
 #include <algorithm>
+#include <fstream>
+#include <locale>
+#include <sstream>
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 void InventoryManager::addItem(const BahanMakanan& item) {
     inventory.push_back(item);
@@ -10,6 +17,55 @@ void InventoryManager::removeItem(std::string_view name) {
     inventory.erase(std::remove_if(inventory.begin(), inventory.end(),
         [name](const BahanMakanan& item) { return item.namaBahan == name; }),
         inventory.end());
+}
+
+void InventoryManager::saveToCSV(const std::string& filename) {
+    std::ofstream file(filename);
+    if (!file.is_open()) return;
+
+    for (const auto& item : inventory) {
+        file << item.namaBahan << ","
+             << item.stokSekarang << ","
+             << item.kandunganNutrisi << ","
+             << item.hargaBahan << ","
+             << item.tanggalExpired << "\n";
+    }
+    file.close();
+}
+
+void InventoryManager::loadFromCSV(const std::string& filename) {
+    std::ifstream file(filename);
+    string messageFallback;
+
+    if (!file.is_open()) {
+        messageFallback = "database on problem please tell the developer";
+        return;
+    }
+
+    inventory.clear();
+    std::string line;
+    while (std::getline(file, line)) {
+        if (line.empty()) continue;
+        std::stringstream ss(line);
+        BahanMakanan item;
+        std::string val;
+
+        std::getline(ss, item.namaBahan, ',');
+
+        std::getline(ss, val, ',');
+        item.stokSekarang = std::stoi(val);
+
+        std::getline(ss, val, ',');
+        item.kandunganNutrisi = std::stoi(val);
+
+        std::getline(ss, val, ',');
+        item.hargaBahan = std::stoi(val);
+
+        std::getline(ss, item.tanggalExpired, ',');
+
+        inventory.push_back(item);
+    }
+    file.close();
 }
 
 std::vector<BahanMakanan> InventoryManager::getSortedItemsByExpiry() {

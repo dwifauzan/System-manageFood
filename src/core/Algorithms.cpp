@@ -2,6 +2,8 @@
 #include <algorithm>
 #include <iostream>
 
+using namespace std;
+
 namespace algo {
 
 // --- Quick Sort Helpers ---
