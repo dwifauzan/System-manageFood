@@ -10,9 +10,11 @@
 #include <QInputDialog>
 #include <QMessageBox>
 
+using namespace std;
+
 MainWindow::MainWindow(const QString &username, const QString &role, QWidget *parent)
     : QMainWindow(parent), currentRole(role) {
-
+    
     setWindowTitle("Sistem Inventaris MBG - " + username + " (" + role + ")");
     resize(800, 600);
 
@@ -23,9 +25,24 @@ MainWindow::MainWindow(const QString &username, const QString &role, QWidget *pa
 
     setupInventoryTab();
     setupMarketTab();
-
+    
     if (role == "Admin") {
         setupAdminTab();
+    }
+}
+
+void MainWindow::refreshInventoryTable() {
+    if (!inventoryTable) return;
+
+    const auto& items = invManager.getInventory();
+    inventoryTable->setRowCount(0);
+    for (const auto& item : items) {
+        int row = inventoryTable->rowCount();
+        inventoryTable->insertRow(row);
+        inventoryTable->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(item.namaBahan)));
+        inventoryTable->setItem(row, 1, new QTableWidgetItem(QString::number(item.stokSekarang)));
+        inventoryTable->setItem(row, 2, new QTableWidgetItem(QString::number(item.kandunganNutrisi)));
+        inventoryTable->setItem(row, 3, new QTableWidgetItem(QString::fromStdString(item.tanggalExpired)));
     }
 }
 
@@ -39,19 +56,19 @@ void MainWindow::setupInventoryTab() {
     searchEdit->setPlaceholderText("Search item by name...");
     QPushButton *searchBtn = new QPushButton("Search (Binary Search)");
     QPushButton *sortBtn = new QPushButton("Sort by Expiry (Quick Sort)");
-
+    
     topBar->addWidget(searchEdit);
     topBar->addWidget(searchBtn);
     topBar->addWidget(sortBtn);
     layout->addLayout(topBar);
 
     // Table
-    QTableWidget *table = new QTableWidget(0, 4);
-    table->setHorizontalHeaderLabels({"Nama", "Stok", "Nutrisi", "Expired"});
-    table->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-    table->setSelectionBehavior(QAbstractItemView::SelectRows);
-    table->setSelectionMode(QAbstractItemView::SingleSelection);
-    layout->addWidget(table);
+    inventoryTable = new QTableWidget(0, 4);
+    inventoryTable->setHorizontalHeaderLabels({"Nama", "Stok", "Nutrisi", "Expired"});
+    inventoryTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    inventoryTable->setSelectionBehavior(QAbstractItemView::SelectRows);
+    inventoryTable->setSelectionMode(QAbstractItemView::SingleSelection);
+    layout->addWidget(inventoryTable);
 
     // Add/Remove Buttons
     QHBoxLayout *actionLayout = new QHBoxLayout();
@@ -61,21 +78,9 @@ void MainWindow::setupInventoryTab() {
     actionLayout->addWidget(removeBtn);
     layout->addLayout(actionLayout);
 
-    auto refreshTable = [table, this](const std::vector<BahanMakanan>& items) {
-        table->setRowCount(0);
-        for (const auto& item : items) {
-            int row = table->rowCount();
-            table->insertRow(row);
-            table->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(item.namaBahan)));
-            table->setItem(row, 1, new QTableWidgetItem(QString::number(item.stokSekarang)));
-            table->setItem(row, 2, new QTableWidgetItem(QString::number(item.kandunganNutrisi)));
-            table->setItem(row, 3, new QTableWidgetItem(QString::fromStdString(item.tanggalExpired)));
-        }
-    };
+    refreshInventoryTable();
 
-    refreshTable(invManager.getInventory());
-
-    connect(addBtn, &QPushButton::clicked, [this, refreshTable]() {
+    connect(addBtn, &QPushButton::clicked, [this]() {
         bool ok;
         QString name = QInputDialog::getText(this, "Add Item", "Nama Bahan:", QLineEdit::Normal, "", &ok);
         if (!ok || name.isEmpty()) return;
@@ -92,36 +97,45 @@ void MainWindow::setupInventoryTab() {
         BahanMakanan newItem{name.toStdString(), stok, nutri, 0, exp.toStdString()};
         invManager.addItem(newItem);
         invManager.saveToCSV("inventory.csv");
-        refreshTable(invManager.getInventory());
+        refreshInventoryTable();
     });
 
-    connect(removeBtn, &QPushButton::clicked, [this, table, refreshTable]() {
-        int row = table->currentRow();
+    connect(removeBtn, &QPushButton::clicked, [this]() {
+        int row = inventoryTable->currentRow();
         if (row < 0) {
             QMessageBox::warning(this, "Warning", "Please select an item to remove.");
             return;
         }
 
-        QString name = table->item(row, 0)->text();
+        QString name = inventoryTable->item(row, 0)->text();
         auto reply = QMessageBox::question(this, "Confirm", "Remove " + name + "?", QMessageBox::Yes | QMessageBox::No);
         if (reply == QMessageBox::Yes) {
             invManager.removeItem(name.toStdString());
             invManager.saveToCSV("inventory.csv");
-            refreshTable(invManager.getInventory());
+            refreshInventoryTable();
         }
     });
 
-    connect(sortBtn, &QPushButton::clicked, [this, refreshTable]() {
-        refreshTable(invManager.getSortedItemsByExpiry());
+    connect(sortBtn, &QPushButton::clicked, [this]() {
+        auto sorted = invManager.getSortedItemsByExpiry();
+        inventoryTable->setRowCount(0);
+        for (const auto& item : sorted) {
+            int r = inventoryTable->rowCount();
+            inventoryTable->insertRow(r);
+            inventoryTable->setItem(r, 0, new QTableWidgetItem(QString::fromStdString(item.namaBahan)));
+            inventoryTable->setItem(r, r == 0 ? 1 : 1, new QTableWidgetItem(QString::number(item.stokSekarang)));
+            inventoryTable->setItem(r, 2, new QTableWidgetItem(QString::number(item.kandunganNutrisi)));
+            inventoryTable->setItem(r, 3, new QTableWidgetItem(QString::fromStdString(item.tanggalExpired)));
+        }
     });
 
     connect(searchBtn, &QPushButton::clicked, [this, searchEdit]() {
-        std::string target = searchEdit->text().toStdString();
+        string target = searchEdit->text().toStdString();
         auto result = invManager.findItemByName(target);
-
+        
         if (result.has_value()) {
             BahanMakanan* item = result.value();
-            QMessageBox::information(this, "Search Result",
+            QMessageBox::information(this, "Search Result", 
                 QString("Found: %1\nStok: %2\nExpired: %3")
                 .arg(QString::fromStdString(item->namaBahan))
                 .arg(item->stokSekarang)
@@ -143,8 +157,8 @@ void MainWindow::setupMarketTab() {
     QTableWidget *marketTable = new QTableWidget(0, 3);
     marketTable->setHorizontalHeaderLabels({"Nama Bahan", "Nutrisi (Value)", "Harga (Weight)"});
     marketTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
-
-    std::vector<BahanMakanan> marketItems = {
+    
+    vector<BahanMakanan> marketItems = {
         {"Daging Sapi", 0, 90, 120000, ""},
         {"Daging Ayam", 0, 80, 40000, ""},
         {"Ikan Kembung", 0, 75, 30000, ""},
@@ -180,23 +194,43 @@ void MainWindow::setupMarketTab() {
             return;
         }
 
-        std::vector<size_t> selected = algo::solveKnapsack(marketItems, budget);
+        vector<size_t> selected = algo::solveKnapsack(marketItems, budget);
+        
+        if (selected.empty()) {
+            QMessageBox::information(this, "Hasil", "Tidak ada barang yang terbeli dengan budget tersebut.");
+            return;
+        }
 
-        QString result = "Rekomendasi Belanja (Nutrisi Maksimal):\n\n";
+        QString result = "Rekomendasi Belanja Terbeli:\n\n";
         int totalNutri = 0;
         int totalCost = 0;
+
         for (size_t idx : selected) {
+            const auto& mItem = marketItems[idx];
             result += QString("- %1 (Nutrisi: %2, Harga: %3)\n")
-                .arg(QString::fromStdString(marketItems[idx].namaBahan))
-                .arg(marketItems[idx].kandunganNutrisi)
-                .arg(marketItems[idx].hargaBahan);
-            totalNutri += marketItems[idx].kandunganNutrisi;
-            totalCost += marketItems[idx].hargaBahan;
+                .arg(QString::fromStdString(mItem.namaBahan))
+                .arg(mItem.kandunganNutrisi)
+                .arg(mItem.hargaBahan);
+            
+            totalNutri += mItem.kandunganNutrisi;
+            totalCost += mItem.hargaBahan;
+
+            auto existing = invManager.findItemByName(mItem.namaBahan);
+            if (existing.has_value()) {
+                existing.value()->stokSekarang += 1;
+            } else {
+                BahanMakanan newItem{mItem.namaBahan, 1, mItem.kandunganNutrisi, mItem.hargaBahan, "2026-12-31"};
+                invManager.addItem(newItem);
+            }
         }
-        result += QString("\nTotal Nutrisi: %1\nTotal Biaya: Rp %2")
+        
+        invManager.saveToCSV("inventory.csv");
+        refreshInventoryTable();
+
+        result += QString("\nTotal Nutrisi: %1\nTotal Biaya: Rp %2\n\nStok Inventaris telah diperbarui!")
             .arg(totalNutri).arg(totalCost);
 
-        QMessageBox::information(this, "Hasil Optimasi Knapsack", result);
+        QMessageBox::information(this, "Optimasi & Update Berhasil", result);
     });
 
     tabs->addTab(tab, "Pasar & Optimasi");
@@ -205,9 +239,9 @@ void MainWindow::setupMarketTab() {
 void MainWindow::setupAdminTab() {
     QWidget *tab = new QWidget();
     QVBoxLayout *layout = new QVBoxLayout(tab);
-
+    
     layout->addWidget(new QLabel("Panel Kontrol Admin"));
-
+    
     QTableWidget *userTable = new QTableWidget(2, 2);
     userTable->setHorizontalHeaderLabels({"Username", "Role"});
     userTable->setItem(0, 0, new QTableWidgetItem("admin"));

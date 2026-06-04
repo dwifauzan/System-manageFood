@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QTabWidget>
 #include <QString>
+#include <QTableWidget>
 #include "core/InventoryManager.h"
 
 class MainWindow : public QMainWindow {
@@ -16,8 +17,10 @@ private:
     void setupInventoryTab();
     void setupMarketTab();
     void setupAdminTab();
+    void refreshInventoryTable();
 
     QTabWidget *tabs;
+    QTableWidget *inventoryTable;
     QString currentRole;
     InventoryManager invManager;
 };

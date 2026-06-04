@@ -1,8 +1,0 @@
-/Users/patrick/Documents/System-manageFood/build/CMakeFiles/InventarisMBG.dir
-/Users/patrick/Documents/System-manageFood/build/CMakeFiles/test_algo.dir
-/Users/patrick/Documents/System-manageFood/build/CMakeFiles/edit_cache.dir
-/Users/patrick/Documents/System-manageFood/build/CMakeFiles/rebuild_cache.dir
-/Users/patrick/Documents/System-manageFood/build/CMakeFiles/InventarisMBG_autogen_timestamp_deps.dir
-/Users/patrick/Documents/System-manageFood/build/CMakeFiles/InventarisMBG_autogen.dir
-/Users/patrick/Documents/System-manageFood/build/CMakeFiles/test_algo_autogen_timestamp_deps.dir
-/Users/patrick/Documents/System-manageFood/build/CMakeFiles/test_algo_autogen.dir
