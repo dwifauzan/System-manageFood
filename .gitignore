@@ -1,0 +1,27 @@
+# C++ / CMake
+build/
+bin/
+lib/
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+Makefile
+*.autogen/
+*_autogen/
+
+# Qt
+*.pro.user
+.qt/
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db

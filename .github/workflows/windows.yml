@@ -26,6 +26,7 @@ jobs:
 
       - name: Build
         run: |
+          if (Test-Path build) { Remove-Item -Recurse -Force build }
           mkdir build
           cd build
           cmake .. -DCMAKE_BUILD_TYPE=Release

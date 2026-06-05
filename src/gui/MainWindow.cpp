@@ -1,4 +1,4 @@
-#include "gui/MainWindow.h"
+#include "gui/mainwindow.h"
 #include "core/Algorithms.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
