@@ -4,6 +4,8 @@
 LoginDialog::LoginDialog(QWidget *parent) : QDialog(parent) {
     setWindowTitle("Login - Inventaris MBG");
     
+    userManager.loadFromCSV("users.csv");
+
     QVBoxLayout *layout = new QVBoxLayout(this);
     
     layout->addWidget(new QLabel("Username:"));
@@ -25,14 +27,10 @@ void LoginDialog::handleLogin() {
     QString user = usernameEdit->text();
     QString pass = passwordEdit->text();
     
-    // Simple hardcoded auth for demo
-    if (user == "admin" && pass == "admin123") {
+    std::string roleStr;
+    if (userManager.authenticate(user.toStdString(), pass.toStdString(), roleStr)) {
         username = user;
-        role = "Admin";
-        accept();
-    } else if (user == "dapur" && pass == "dapur123") {
-        username = user;
-        role = "Dapur";
+        role = QString::fromStdString(roleStr);
         accept();
     } else {
         QMessageBox::warning(this, "Login Failed", "Invalid username or password.");

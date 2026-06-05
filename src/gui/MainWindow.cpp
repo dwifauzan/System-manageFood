@@ -1,4 +1,4 @@
-#include "gui/mainwindow.h"
+#include "gui/MainWindow.h"
 #include "core/Algorithms.h"
 #include <QVBoxLayout>
 #include <QHBoxLayout>
@@ -9,6 +9,7 @@
 #include <QHeaderView>
 #include <QInputDialog>
 #include <QMessageBox>
+#include <QComboBox>
 
 using namespace std;
 
@@ -19,6 +20,7 @@ MainWindow::MainWindow(const QString &username, const QString &role, QWidget *pa
     resize(800, 600);
 
     invManager.loadFromCSV("inventory.csv");
+    userManager.loadFromCSV("users.csv");
 
     tabs = new QTabWidget(this);
     setCentralWidget(tabs);
@@ -43,6 +45,19 @@ void MainWindow::refreshInventoryTable() {
         inventoryTable->setItem(row, 1, new QTableWidgetItem(QString::number(item.stokSekarang)));
         inventoryTable->setItem(row, 2, new QTableWidgetItem(QString::number(item.kandunganNutrisi)));
         inventoryTable->setItem(row, 3, new QTableWidgetItem(QString::fromStdString(item.tanggalExpired)));
+    }
+}
+
+void MainWindow::refreshUserTable() {
+    if (!userTable) return;
+
+    const auto& users = userManager.getUsers();
+    userTable->setRowCount(0);
+    for (const auto& user : users) {
+        int row = userTable->rowCount();
+        userTable->insertRow(row);
+        userTable->setItem(row, 0, new QTableWidgetItem(QString::fromStdString(user.username)));
+        userTable->setItem(row, 1, new QTableWidgetItem(QString::fromStdString(user.role)));
     }
 }
 
@@ -242,14 +257,64 @@ void MainWindow::setupAdminTab() {
     
     layout->addWidget(new QLabel("Panel Kontrol Admin"));
     
-    QTableWidget *userTable = new QTableWidget(2, 2);
+    userTable = new QTableWidget(0, 2);
     userTable->setHorizontalHeaderLabels({"Username", "Role"});
-    userTable->setItem(0, 0, new QTableWidgetItem("admin"));
-    userTable->setItem(0, 1, new QTableWidgetItem("Admin"));
-    userTable->setItem(1, 0, new QTableWidgetItem("dapur"));
-    userTable->setItem(1, 1, new QTableWidgetItem("Dapur"));
+    userTable->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     layout->addWidget(new QLabel("Manajemen Pengguna:"));
     layout->addWidget(userTable);
+
+    refreshUserTable();
+
+    QPushButton *addUserBtn = new QPushButton("Add New User");
+    layout->addWidget(addUserBtn);
+
+    connect(addUserBtn, &QPushButton::clicked, [this]() {
+        QDialog dialog(this);
+        dialog.setWindowTitle("Add New User");
+        QVBoxLayout layout(&dialog);
+
+        QLineEdit *userEdit = new QLineEdit();
+        userEdit->setPlaceholderText("Username");
+        layout.addWidget(new QLabel("Username:"));
+        layout.addWidget(userEdit);
+
+        QLineEdit *passEdit = new QLineEdit();
+        passEdit->setPlaceholderText("Password");
+        passEdit->setEchoMode(QLineEdit::Password);
+        layout.addWidget(new QLabel("Password:"));
+        layout.addWidget(passEdit);
+
+        QComboBox *roleCombo = new QComboBox();
+        roleCombo->addItems({"Admin", "Dapur"});
+        layout.addWidget(new QLabel("Role:"));
+        layout.addWidget(roleCombo);
+
+        QPushButton *saveBtn = new QPushButton("Save");
+        layout.addWidget(saveBtn);
+
+        connect(saveBtn, &QPushButton::clicked, [&]() {
+            QString username = userEdit->text();
+            QString password = passEdit->text();
+            QString role = roleCombo->currentText();
+
+            if (username.isEmpty() || password.isEmpty()) {
+                QMessageBox::warning(&dialog, "Error", "Username and password cannot be empty.");
+                return;
+            }
+
+            if (userManager.userExists(username.toStdString())) {
+                QMessageBox::warning(&dialog, "Error", "User already exists.");
+                return;
+            }
+
+            userManager.addUser({username.toStdString(), password.toStdString(), role.toStdString()});
+            userManager.saveToCSV("users.csv");
+            refreshUserTable();
+            dialog.accept();
+        });
+
+        dialog.exec();
+    });
 
     layout->addWidget(new QLabel("Rekapitulasi Anggaran:"));
     QLabel *financialLabel = new QLabel("Total Anggaran Terpakai: Rp 1.250.000\nSisa Anggaran: Rp 3.750.000");

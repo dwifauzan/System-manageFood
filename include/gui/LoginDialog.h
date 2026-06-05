@@ -7,6 +7,7 @@
 #include <QVBoxLayout>
 #include <QLabel>
 #include <QString>
+#include "core/UserManager.h"
 
 class LoginDialog : public QDialog {
     Q_OBJECT
@@ -24,6 +25,7 @@ private:
     QLineEdit *passwordEdit;
     QString username;
     QString role;
+    UserManager userManager;
 };
 
 #endif // LOGIN_DIALOG_H

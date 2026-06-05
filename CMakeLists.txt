@@ -18,6 +18,7 @@ set(SOURCES
     src/main.cpp
     src/core/Algorithms.cpp
     src/core/InventoryManager.cpp
+    src/core/UserManager.cpp
     src/gui/LoginDialog.cpp
     src/gui/MainWindow.cpp
 )
@@ -25,8 +26,10 @@ set(SOURCES
 # Headers
 set(HEADERS
     include/core/BahanMakanan.h
+    include/core/User.h
     include/core/Algorithms.h
     include/core/InventoryManager.h
+    include/core/UserManager.h
     include/gui/LoginDialog.h
     include/gui/MainWindow.h
 )
