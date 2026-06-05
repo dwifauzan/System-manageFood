@@ -31,7 +31,7 @@ set(HEADERS
     include/gui/MainWindow.h
 )
 
-add_executable(InventarisMBG ${SOURCES} ${HEADERS})
+add_executable(InventarisMBG WIN32 ${SOURCES} ${HEADERS})
 target_link_libraries(InventarisMBG PRIVATE Qt6::Widgets)
 
 # Unit Test Executable

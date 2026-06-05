@@ -32,8 +32,17 @@ jobs:
           cmake .. -DCMAKE_BUILD_TYPE=Release
           cmake --build . --config Release
 
+      - name: Deploy Qt Dependencies
+        run: |
+          $qt_bin = "$env:Qt6_DIR\bin"
+          & "$qt_bin\windeployqt.exe" --release --no-translations --no-opengl-sw build/Release/InventarisMBG.exe
+
+      - name: Create Zip
+        run: |
+          Compress-Archive -Path build/Release/* -DestinationPath InventarisMBG-Windows.zip
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: InventarisMBG-Windows
-          path: build/Release/InventarisMBG.exe
+          path: InventarisMBG-Windows.zip
