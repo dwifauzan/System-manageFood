@@ -38,7 +38,8 @@ void InventoryManager::loadFromCSV(const std::string& filename) {
     string messageFallback;
 
     if (!file.is_open()) {
-        messageFallback = "database on problem please tell the developer";
+        loadFromDummy();
+        saveToCSV(filename);
         return;
     }
 
@@ -79,16 +80,12 @@ std::vector<BahanMakanan> InventoryManager::getSortedItemsByExpiry() {
 std::optional<BahanMakanan*> InventoryManager::findItemByName(std::string_view name) {
     if (inventory.empty()) return std::nullopt;
 
-    // Sort for binary search (using the new operator<)
-    std::vector<BahanMakanan> temp = inventory;
-    std::sort(temp.begin(), temp.end());
+    // Binary search requires sorted data by name
+    std::sort(inventory.begin(), inventory.end());
 
-    auto indexOpt = algo::binarySearchByName(temp, name);
+    auto indexOpt = algo::binarySearchByName(inventory, name);
     if (indexOpt.has_value()) {
-        // Find original pointer
-        for (auto& item : inventory) {
-            if (item.namaBahan == name) return &item;
-        }
+        return &inventory[indexOpt.value()];
     }
     return std::nullopt;
 }

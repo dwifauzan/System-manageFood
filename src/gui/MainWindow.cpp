@@ -14,13 +14,14 @@
 using namespace std;
 
 MainWindow::MainWindow(const QString &username, const QString &role, QWidget *parent)
-    : QMainWindow(parent), currentRole(role) {
+    : QMainWindow(parent), currentRole(role), financialLabel(nullptr) {
     
     setWindowTitle("Sistem Inventaris MBG - " + username + " (" + role + ")");
     resize(800, 600);
 
     invManager.loadFromCSV("inventory.csv");
     userManager.loadFromCSV("users.csv");
+    finManager.loadFromCSV("financials.csv");
 
     tabs = new QTabWidget(this);
     setCentralWidget(tabs);
@@ -31,6 +32,13 @@ MainWindow::MainWindow(const QString &username, const QString &role, QWidget *pa
     if (role == "Admin") {
         setupAdminTab();
     }
+}
+
+void MainWindow::refreshFinancials() {
+    if (!financialLabel) return;
+    financialLabel->setText(QString("Total Anggaran Terpakai: Rp %1\nSisa Anggaran: Rp %2")
+        .arg(finManager.getSpent())
+        .arg(finManager.getRemaining()));
 }
 
 void MainWindow::refreshInventoryTable() {
@@ -230,6 +238,8 @@ void MainWindow::setupMarketTab() {
             totalNutri += mItem.kandunganNutrisi;
             totalCost += mItem.hargaBahan;
 
+            finManager.addExpense(mItem.hargaBahan);
+
             auto existing = invManager.findItemByName(mItem.namaBahan);
             if (existing.has_value()) {
                 existing.value()->stokSekarang += 1;
@@ -240,7 +250,9 @@ void MainWindow::setupMarketTab() {
         }
         
         invManager.saveToCSV("inventory.csv");
+        finManager.saveToCSV("financials.csv");
         refreshInventoryTable();
+        refreshFinancials();
 
         result += QString("\nTotal Nutrisi: %1\nTotal Biaya: Rp %2\n\nStok Inventaris telah diperbarui!")
             .arg(totalNutri).arg(totalCost);
@@ -317,9 +329,23 @@ void MainWindow::setupAdminTab() {
     });
 
     layout->addWidget(new QLabel("Rekapitulasi Anggaran:"));
-    QLabel *financialLabel = new QLabel("Total Anggaran Terpakai: Rp 1.250.000\nSisa Anggaran: Rp 3.750.000");
+    financialLabel = new QLabel();
     financialLabel->setStyleSheet("font-weight: bold; color: blue;");
     layout->addWidget(financialLabel);
+    refreshFinancials();
+
+    QPushButton *setBudgetBtn = new QPushButton("Set Total Budget");
+    layout->addWidget(setBudgetBtn);
+
+    connect(setBudgetBtn, &QPushButton::clicked, [this]() {
+        bool ok;
+        int newBudget = QInputDialog::getInt(this, "Set Budget", "Total Budget (Rp):", finManager.getBudget(), 0, 100000000, 10000, &ok);
+        if (ok) {
+            finManager.setBudget(newBudget);
+            finManager.saveToCSV("financials.csv");
+            refreshFinancials();
+        }
+    });
 
     tabs->addTab(tab, "Admin");
 }

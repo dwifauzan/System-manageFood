@@ -39,6 +39,12 @@ Dapur MBG memerlukan efisiensi dalam pengelolaan stok bahan pangan untuk mencega
 - **Fitur Smart Market:** Integrasi algoritma Knapsack pada katalog pasar dummy untuk rekomendasi belanja.
 - **Admin Panel:** Implementasi view khusus untuk monitoring finansial dan user list.
 
+### [Juni 7, 2026] - Migrasi & Bug Fixing
+- **Financial Persistence:** Implementasi `FinancialManager` untuk mengelola budget dan pengeluaran via `financials.csv`.
+- **UI Update:** Panel Admin sekarang menampilkan data finansial real-time dan mendukung pengaturan budget.
+- **Bug Fix:** Otomatisasi loading data dummy jika file CSV kosong/hilang.
+- **Optimasi:** Perbaikan logika Binary Search agar lebih efisien.
+
 ---
 
 ## 4. ROADMAP PENGEMBANGAN (FUTURE)
@@ -64,9 +70,19 @@ proyekalgo/
 ├── SYSTEM_DOCS.md        # Dokumentasi ini
 ├── include/              # Header Files
 │   ├── core/             # Logika Algoritma
+│   │   ├── Algorithms.h
+│   │   ├── BahanMakanan.h
+│   │   ├── FinancialManager.h
+│   │   ├── InventoryManager.h
+│   │   ├── User.h
+│   │   └── UserManager.h
 │   └── gui/              # Komponen Antarmuka
 ├── src/                  # Source Files
 │   ├── core/
+│   │   ├── Algorithms.cpp
+│   │   ├── FinancialManager.cpp
+│   │   ├── InventoryManager.cpp
+│   │   └── UserManager.cpp
 │   ├── gui/
 │   └── main.cpp          # Entry Point
 └── tests/                # Unit Testing

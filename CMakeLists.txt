@@ -19,6 +19,7 @@ set(SOURCES
     src/core/Algorithms.cpp
     src/core/InventoryManager.cpp
     src/core/UserManager.cpp
+    src/core/FinancialManager.cpp
     src/gui/LoginDialog.cpp
     src/gui/MainWindow.cpp
 )
@@ -30,6 +31,7 @@ set(HEADERS
     include/core/Algorithms.h
     include/core/InventoryManager.h
     include/core/UserManager.h
+    include/core/FinancialManager.h
     include/gui/LoginDialog.h
     include/gui/MainWindow.h
 )
